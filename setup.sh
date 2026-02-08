@@ -63,4 +63,8 @@ ln -sf $DOTFILES/redshift/redshift.conf ~/.config/redshift/redshift.conf
 ln -sf $DOTFILES/helix/config.toml ~/.config/helix/config.toml
 ln -sf $DOTFILES/applications/logseq.desktop ~/.local/share/applications/logseq.desktop
 
+echo "=== Systemd-logind configuration ==="
+sudo cp ~/dotfiles/systemd/logind.conf /etc/systemd/logind.conf
+sudo systemctl restart systemd-logind
+
 echo "=== Setup complete ! ==="
