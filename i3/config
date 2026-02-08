@@ -124,9 +124,9 @@ bindsym $mod+q focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-assign [class="Firefox"] $ws1
+assign [class="org.mozilla.firefox"] $ws1
 assign [class="Alacritty"] $ws2
-# assign [class="newnotepad"] $ws3
+assign [class="Logseq"] $ws3
 assign [class="discord"] $ws4
 
 # Define names for default workspaces for which we configure key bindings later on.

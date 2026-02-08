@@ -16,7 +16,7 @@ sudo dnf install \
   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # -----------------------------
-# 2️⃣ Installation des packages
+# 2 Installation des packages
 # -----------------------------
 echo "=== Packages installation ==="
 # i3 / WM
