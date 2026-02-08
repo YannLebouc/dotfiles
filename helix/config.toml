@@ -1,0 +1,9 @@
+theme = "tokyonight"
+
+[editor]
+line-number = "relative"
+mouse = false
+auto-format = true
+
+[editor.lsp]
+display-messages = true

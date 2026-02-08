@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Logseq
+Exec=/home/ylebouc/.local/appimages/logseq.AppImage
+Icon=logseq
+Type=Application
+Categories=Office;
+Terminal=false
