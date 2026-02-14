@@ -21,6 +21,12 @@ sudo dnf install \
 echo "=== Packages installation ==="
 # i3 / WM
 sudo dnf install -y rofi feh xset
+# Browser
+sudo dnf install dnf-plugins-core
+
+sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+
+sudo dnf install brave-browser
 # Terminal / Shell
 sudo dnf install -y alacritty tmux
 # Dev
