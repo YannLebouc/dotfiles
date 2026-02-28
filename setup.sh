@@ -52,6 +52,7 @@ mkdir -p ~/.config/tmux
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/redshift
 mkdir -p ~/.config/helix
+mkdir -p ~/.config/rss-tui
 mkdir -p ~/.local/appimages
 mkdir -p ~/.local/share/applications
 
@@ -68,6 +69,7 @@ ln -sf $DOTFILES/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -sf $DOTFILES/redshift/redshift.conf ~/.config/redshift/redshift.conf
 ln -sf $DOTFILES/helix/config.toml ~/.config/helix/config.toml
 ln -sf $DOTFILES/applications/logseq.desktop ~/.local/share/applications/logseq.desktop
+ln -sf $DOTFILES/rss-tui/feeds ~/.config/rss-tui/feeds
 
 echo "=== Systemd-logind configuration ==="
 sudo cp ~/dotfiles/systemd/logind.conf /etc/systemd/logind.conf
