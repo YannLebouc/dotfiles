@@ -68,6 +68,7 @@ ln -sf $DOTFILES/tmux/tmux.conf ~/.config/tmux/tmux.conf
 ln -sf $DOTFILES/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -sf $DOTFILES/redshift/redshift.conf ~/.config/redshift/redshift.conf
 ln -sf $DOTFILES/helix/config.toml ~/.config/helix/config.toml
+ln -sf $DOTFILES/helix/languages.toml ~/.config/helix/languages.toml
 ln -sf $DOTFILES/applications/logseq.desktop ~/.local/share/applications/logseq.desktop
 ln -sf $DOTFILES/rss-tui/feeds ~/.config/rss-tui/feeds
 
