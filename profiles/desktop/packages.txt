@@ -1,0 +1,10 @@
+rofi feh xset i3status
+dnf-plugins-core
+brave-browser
+alacritty tmux
+git helix gcc-c++ clang lldb cmake make golang ripgrep fzf delve
+pavucontrol pipewire-utils fuse-libs
+network-manager-applet
+redshift scrot
+discord
+htop unzip wget curl
