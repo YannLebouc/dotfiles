@@ -35,8 +35,6 @@ echo "=== Creating directories ==="
 mkdir -p \
   ~/.config/{i3,i3status,tmux,alacritty,redshift,helix,rss-tui} \
   ~/.config/i3/config.d \
-  ~/.local/share/applications \
-  ~/.local/appimages
 
 echo "=== Symlinks (common) ==="
 link "$COMMON/i3/config"                   ~/.config/i3/config
@@ -46,7 +44,6 @@ link "$COMMON/helix/config.toml"           ~/.config/helix/config.toml
 link "$COMMON/helix/languages.toml"        ~/.config/helix/languages.toml
 link "$COMMON/redshift/redshift.conf"      ~/.config/redshift/redshift.conf
 link "$COMMON/rss-tui/feeds"               ~/.config/rss-tui/feeds
-link "$COMMON/applications/logseq.desktop" ~/.local/share/applications/logseq.desktop
 
 echo "=== Symlinks (profile) ==="
 link "$PROF/i3status/config"               ~/.config/i3status/config
