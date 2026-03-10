@@ -13,5 +13,6 @@ source "$CONFIG_FILE"
 
 : "${RDP_HOST:?RDP_HOST is not set}"
 : "${RDP_USER:?RDP_USER is not set}"
+: "${RDP_DOMAIN:?RDP_DOMAIN is not set}"
 
-exec xfreerdp /v:"$RDP_HOST" /u:"$RDP_USER" /f /dynamic-resolution /clipboard
+exec xfreerdp /v:"$RDP_HOST" /u:"$RDP_USER" /d:$RDP_DOMAIN /dynamic-resolution /clipboard /cert:ignore
