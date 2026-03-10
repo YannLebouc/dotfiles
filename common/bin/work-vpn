@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+CONFIG_FILE="${HOME}/.config/private/work.env"
+
+if [[ ! -f "$CONFIG_FILE" ]]; then
+  echo "Missing config file: $CONFIG_FILE"
+  exit 1
+fi
+
+# shellcheck disable=SC1090
+source "$CONFIG_FILE"
+
+: "${VPN_CONFIG:?VPN_CONFIG is not set}"
+
+VPN_DIR="$(dirname "$VPN_CONFIG")"
+VPN_FILE="$(basename "$VPN_CONFIG")"
+
+exec sudo openvpn --cd "$VPN_DIR" --config "$VPN_FILE"

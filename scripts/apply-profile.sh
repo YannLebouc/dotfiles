@@ -33,22 +33,23 @@ link() {
 
 echo "=== Creating directories ==="
 mkdir -p \
-  ~/.config/{i3,i3status,tmux,alacritty,redshift,helix,rss-tui} \
+  ~/.config/{i3,i3status,tmux,alacritty,redshift,helix,rss-tui,private} \
   ~/.config/i3/config.d \
+  ~/.local/bin \
+  ~/vpn/azur
 
 echo "=== Symlinks (common) ==="
-link "$COMMON/i3/config"                   ~/.config/i3/config
-link "$COMMON/tmux/tmux.conf"              ~/.config/tmux/tmux.conf
-link "$COMMON/alacritty/alacritty.toml"    ~/.config/alacritty/alacritty.toml
-link "$COMMON/helix/config.toml"           ~/.config/helix/config.toml
-link "$COMMON/helix/languages.toml"        ~/.config/helix/languages.toml
-link "$COMMON/redshift/redshift.conf"      ~/.config/redshift/redshift.conf
-link "$COMMON/rss-tui/feeds"               ~/.config/rss-tui/feeds
+link "$COMMON/i3/config"                ~/.config/i3/config
+link "$COMMON/tmux/tmux.conf"           ~/.config/tmux/tmux.conf
+link "$COMMON/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml
+link "$COMMON/helix/config.toml"        ~/.config/helix/config.toml
+link "$COMMON/helix/languages.toml"     ~/.config/helix/languages.toml
+link "$COMMON/redshift/redshift.conf"   ~/.config/redshift/redshift.conf
+link "$COMMON/rss-tui/feeds"            ~/.config/rss-tui/feeds
 
 echo "=== Symlinks (profile) ==="
-link "$PROF/i3status/config"               ~/.config/i3status/config
+link "$PROF/i3status/config" ~/.config/i3status/config
 
-# Optional i3 snippets
 if [[ -d "$PROF/i3/config.d" ]]; then
   for f in "$PROF/i3/config.d/"*.conf; do
     [[ -e "$f" ]] || continue
@@ -56,9 +57,31 @@ if [[ -d "$PROF/i3/config.d" ]]; then
   done
 fi
 
+echo "=== Symlinks (common bin scripts) ==="
+if [[ -d "$COMMON/bin" ]]; then
+  for f in "$COMMON/bin/"*; do
+    [[ -e "$f" ]] || continue
+    chmod +x "$f"
+    link "$f" "$HOME/.local/bin/$(basename "$f")"
+  done
+fi
+
 echo "=== systemd-logind configuration (common) ==="
-link "$COMMON/systemd/logind.conf" "$HOME/.cache/dotfiles-logind.conf" >/dev/null 2>&1 || true
 sudo cp "$COMMON/systemd/logind.conf" /etc/systemd/logind.conf
 sudo systemctl restart systemd-logind
+
+echo "=== Private config bootstrap ==="
+chmod 700 "$HOME/.config/private"
+
+if [[ ! -f "$HOME/.config/private/work.env" ]]; then
+  if [[ -f "$COMMON/templates/work.env.example" ]]; then
+    cp "$COMMON/templates/work.env.example" "$HOME/.config/private/work.env"
+    chmod 600 "$HOME/.config/private/work.env"
+    echo "Created ~/.config/private/work.env from template"
+    echo "Please edit it with your real values."
+  else
+    echo "Missing template: $COMMON/templates/work.env.example"
+  fi
+fi
 
 echo "=== Apply complete ($PROFILE) ==="

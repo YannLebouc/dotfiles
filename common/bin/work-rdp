@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+CONFIG_FILE="${HOME}/.config/private/work.env"
+
+if [[ ! -f "$CONFIG_FILE" ]]; then
+  echo "Missing config file: $CONFIG_FILE"
+  exit 1
+fi
+
+# shellcheck disable=SC1090
+source "$CONFIG_FILE"
+
+: "${RDP_HOST:?RDP_HOST is not set}"
+: "${RDP_USER:?RDP_USER is not set}"
+
+exec xfreerdp /v:"$RDP_HOST" /u:"$RDP_USER" /f /dynamic-resolution /clipboard
