@@ -84,4 +84,15 @@ if [[ ! -f "$HOME/.config/private/work.env" ]]; then
   fi
 fi
 
+echo "=== Ensuring Go bin is in PATH ==="
+
+GO_PATH_LINE='export PATH="$HOME/go/bin:$PATH"'
+
+if ! grep -Fq "$GO_PATH_LINE" "$HOME/.bashrc"; then
+  echo '' >> "$HOME/.bashrc"
+  echo '# dotfiles-go-path' >> "$HOME/.bashrc"
+  echo "$GO_PATH_LINE" >> "$HOME/.bashrc"
+  echo "Added ~/go/bin to PATH in ~/.bashrc"
+fi
+
 echo "=== Apply complete ($PROFILE) ==="

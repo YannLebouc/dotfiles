@@ -17,5 +17,6 @@ fi
 
 "$DOTFILES/scripts/install-packages.sh" "$PROFILE"
 "$DOTFILES/scripts/apply-profile.sh" "$PROFILE"
+"$DOTFILES/scripts/install-go-tools.sh"
 
 echo "=== Setup complete ($PROFILE) ==="
