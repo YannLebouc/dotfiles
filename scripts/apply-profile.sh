@@ -74,13 +74,13 @@ echo "=== Private config bootstrap ==="
 chmod 700 "$HOME/.config/private"
 
 if [[ ! -f "$HOME/.config/private/work.env" ]]; then
-  if [[ -f "$COMMON/templates/work.env.example" ]]; then
-    cp "$COMMON/templates/work.env.example" "$HOME/.config/private/work.env"
+  if [[ -f "$COMMON/templates/work.env.template" ]]; then
+    cp "$COMMON/templates/work.env.template" "$HOME/.config/private/work.env"
     chmod 600 "$HOME/.config/private/work.env"
     echo "Created ~/.config/private/work.env from template"
     echo "Please edit it with your real values."
   else
-    echo "Missing template: $COMMON/templates/work.env.example"
+    echo "Missing template: $COMMON/templates/work.env.template"
   fi
 fi
 
