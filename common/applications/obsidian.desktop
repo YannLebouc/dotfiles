@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Obsidian
+Exec=/home/ylebouc/.local/appimages/obsidian.AppImage
+Icon=obsidian
+Type=Application
+Categories=Office;

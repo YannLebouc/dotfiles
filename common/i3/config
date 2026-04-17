@@ -126,7 +126,9 @@ bindsym $mod+q focus parent
 #bindsym $mod+d focus child
 assign [class="Brave-browser"] $ws1
 assign [class="Alacritty"] $ws2
+assign [class="Code"] $ws3
 assign [class="discord"] $ws4
+assign [class="obsidian"] $ws5
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.

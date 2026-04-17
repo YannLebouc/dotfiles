@@ -27,6 +27,20 @@ echo "=== Brave repository ==="
 sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 
+echo "=== Visual studio code ==="
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+sudo sh -c 'cat > /etc/yum.repos.d/vscode.repo <<EOF
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+EOF'
+
+sudo dnf install -y code
+
 echo "=== Packages installation ($PROFILE) ==="
 # Read packages file, ignore empty lines and comments
 mapfile -t PKGS < <(grep -vE '^\s*#|^\s*$' "$PKG_FILE")
