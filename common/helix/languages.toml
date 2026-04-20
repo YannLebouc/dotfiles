@@ -1,0 +1,8 @@
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimports" }
+language-servers = [ "gopls" ]
+
+[language-server.gopls]
+command = "gopls"
