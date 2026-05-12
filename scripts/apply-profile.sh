@@ -33,7 +33,7 @@ link() {
 
 echo "=== Creating directories ==="
 mkdir -p \
-  ~/.config/{i3,i3status,tmux,alacritty,redshift,helix,rss-tui,private} \
+  ~/.config/{i3,i3status,tmux,alacritty,redshift,helix,private} \
   ~/.config/i3/config.d \
   ~/.local/bin \
   ~/vpn/azur \
@@ -50,7 +50,6 @@ link "$COMMON/i3/config"                ~/.config/i3/config
 link "$COMMON/tmux/tmux.conf"           ~/.config/tmux/tmux.conf
 link "$COMMON/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml
 link "$COMMON/redshift/redshift.conf"   ~/.config/redshift/redshift.conf
-link "$COMMON/rss-tui/feeds"            ~/.config/rss-tui/feeds
 link "$COMMON/helix/config.toml"        ~/.config/helix/config.toml
 link "$COMMON/helix/languages.toml"     ~/.config/helix/languages.toml
 link "$COMMON/applications/obsidian.desktop" ~/.local/share/applications/obsidian.desktop
