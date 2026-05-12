@@ -1,5 +1,0 @@
-# pattern : url tags
-# exemple : https://cprss.s3.amazonaws.com/golangweekly.com.xml golang
-https://cprss.s3.amazonaws.com/golangweekly.com.xml
-https://www.reddit.com/r/golang/.rss
-https://www.lemonde.fr/international/rss_full.xml

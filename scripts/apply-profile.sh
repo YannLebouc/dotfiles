@@ -37,7 +37,8 @@ mkdir -p \
   ~/.config/i3/config.d \
   ~/.local/bin \
   ~/vpn/azur \
-  ~/.local/share/applications
+  ~/.local/share/applications \
+  ~/.config/zathura
 
 echo "=== AppImages setup ==="
 
@@ -53,6 +54,7 @@ link "$COMMON/rss-tui/feeds"            ~/.config/rss-tui/feeds
 link "$COMMON/helix/config.toml"        ~/.config/helix/config.toml
 link "$COMMON/helix/languages.toml"     ~/.config/helix/languages.toml
 link "$COMMON/applications/obsidian.desktop" ~/.local/share/applications/obsidian.desktop
+link "$COMMON/zathura/zathurarc" ~/.config/zathura/zathurarc
 
 echo "=== Symlinks (profile) ==="
 link "$PROF/i3status/config" ~/.config/i3status/config

@@ -66,6 +66,13 @@ bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+Shift+a kill
 
+# Start zathura
+bindsym $mod+p exec --no-startup-id zathura
+bindsym $mod+Shift+p scratchpad show
+# Move it to scratchpad instantly
+for_window [class="Zathura"] move scratchpad
+for_window [class="Zathura"] scratchpad show
+
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'"
 # A more modern dmenu replacement is rofi:
@@ -124,11 +131,10 @@ bindsym $mod+q focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-assign [class="Brave-browser"] $ws1
+assign [class="Navigator"] $ws1
 assign [class="Alacritty"] $ws2
-assign [class="Code"] $ws3
+assign [class="obsidian"] $ws3
 assign [class="discord"] $ws4
-assign [class="obsidian"] $ws5
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
