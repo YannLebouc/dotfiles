@@ -54,7 +54,7 @@ link "$COMMON/helix/config.toml"        ~/.config/helix/config.toml
 link "$COMMON/helix/languages.toml"     ~/.config/helix/languages.toml
 link "$COMMON/applications/obsidian.desktop" ~/.local/share/applications/obsidian.desktop
 link "$COMMON/zathura/zathurarc" ~/.config/zathura/zathurarc
-
+link "$COMMON/applications/brave-browser.desktop" ~/.local/share/applications/brave-browser.desktop
 echo "=== Symlinks (profile) ==="
 link "$PROF/i3status/config" ~/.config/i3status/config
 
