@@ -23,6 +23,10 @@ sudo dnf install -y \
   "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
   "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 
+echo "=== Brave repository ==="
+sudo dnf install -y dnf-plugins-core
+sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+
 echo "=== Visual studio code ==="
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 

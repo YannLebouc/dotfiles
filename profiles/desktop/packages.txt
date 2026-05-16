@@ -34,3 +34,4 @@ openvpn
 freerdp
 zathura
 zathura-pdf-mupdf
+brave-browser
